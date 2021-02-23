@@ -9,15 +9,18 @@ public class Menu {
         return "";
     }
     public void setNama_menu(String nama_menu){
+        this.nama_menu = nama_menu;
     }
     public double getHarga(){
-        return 0;
+        return harga;
     }
     void setHarga(double harga){
+        this.harga = harga;
     }
     public String getKategori(){
-        return "";
+        return kategori;
     }
     public void setKategori(String kategori){
+        this.kategori = kategori;
     }
 }

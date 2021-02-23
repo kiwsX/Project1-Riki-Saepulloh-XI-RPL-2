@@ -6,7 +6,7 @@ public class Menu {
     private String kategori;
 
     public String getNama_menu() {
-        return "";
+        return nama_menu;
     }
     public void setNama_menu(String nama_menu){
         this.nama_menu = nama_menu;

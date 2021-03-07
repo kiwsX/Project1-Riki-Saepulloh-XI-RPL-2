@@ -11,7 +11,7 @@ public class DaftarMenu {
         daftarMenu.add(menu);
     }
     public void getMenuByKategori(String kategori){
-        System.out.println("======== " + kategori + " ========");
+        System.out.println("========== " + kategori + " ==========");
 
         for (int i = 0; i < daftarMenu.size(); i++){
             Menu m = daftarMenu.get(i);
@@ -21,7 +21,7 @@ public class DaftarMenu {
         }
     }
     public void tampilDaftarMenu(){
-        System.out.println("======== MERAMENAJA ========");
+        System.out.println("========== DIRAMENINAJA ==========");
         getMenuByKategori("Ramen");
         getMenuByKategori("Kuah");
         getMenuByKategori("Toping");

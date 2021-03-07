@@ -10,7 +10,7 @@ public class MainAplikasiKasir {
     public static double PAJAK_PPN = 0.10;
     public static double BIAYA_SERVICE = 0.05;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         String no_transaksi, nama_pemesan, tanggal, no_meja = "";
@@ -21,7 +21,7 @@ public class MainAplikasiKasir {
         app.generateDaftarMenu();
 
         System.out.println("========== TRANSAKSI ==========");
-
+        do {
             System.out.print("No Transaksi : ");
             no_transaksi = input.next();
             System.out.print("Pemesanan : ");
@@ -31,7 +31,7 @@ public class MainAplikasiKasir {
             System.out.print("Makan ditempat? [Y/N] ");
             makan_ditempat = input.next();
 
-            if(makan_ditempat.equalsIgnoreCase("Y")){
+            if (makan_ditempat.equalsIgnoreCase("Y")) {
                 System.out.print("Nomor Meja : ");
                 no_meja = input.next();
             }
@@ -93,7 +93,7 @@ public class MainAplikasiKasir {
             double ppn = trans.hitungPajak();
             System.out.println("Pajak 10% : \t\t " + ppn);
             double biaya_service = 0;
-            if (makan_ditempat.equalsIgnoreCase("Y")){
+            if (makan_ditempat.equalsIgnoreCase("Y")) {
                 trans.setBiayaService(BIAYA_SERVICE);
                 biaya_service = trans.hitungBiayaService();
                 System.out.println("Biaya Service 5% : \t\t" + biaya_service);
@@ -103,15 +103,17 @@ public class MainAplikasiKasir {
             do {
                 double uang_bayar = app.cekInputNumber("Uang Bayar : \t\t");
                 kembalian = trans.hitungKembalian(uang_bayar);
-                if (kembalian < 0){
+                if (kembalian < 0) {
                     System.out.println("[Error] Uang anda kurang");
-                }
-                else {
+                } else {
                     System.out.println("Kembalian : \t\t " + kembalian);
                     break;
                 }
-            }while (kembalian < 0);
-            System.out.println("========== TERIMA KASIH ==========");
+            } while (kembalian < 0);
+            System.out.println("Lakukan Transaksi Lagi? [Y/N] ");
+            transaksi_lagi = input.next();
+        } while (transaksi_lagi.equalsIgnoreCase("Y"));
+        System.out.println("========== TERIMA KASIH ==========");
     }
     public DaftarMenu daftarMenu;
     public void generateDaftarMenu(){
